@@ -1,0 +1,1 @@
+26. Add file"application.js".  Stage, commit with a message, and push the changes 
