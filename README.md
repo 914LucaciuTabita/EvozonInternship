@@ -1,5 +1,5 @@
 # EvozonInternship
 
-HELLO devs!!!!!! 
+revert
 
-(This is ex 17)
+Assignment 2 - ex 2
