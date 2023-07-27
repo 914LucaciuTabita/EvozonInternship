@@ -216,4 +216,107 @@ public class LogicalOp {
             System.out.println();
         }
     }
+
+    public void sumAndAverageNumbersInInterval() {
+        int startNumber = 111;
+        int endNumber = 8899;
+        int sum = 0;
+        int count = 0;
+
+        int currentNumber = startNumber;
+        while (currentNumber <= endNumber) {
+            sum += currentNumber;
+            count++;
+            currentNumber++;
+        }
+
+        double average = (double) sum / count;
+
+        System.out.println("The total sum of numbers from " + startNumber + " to " + endNumber + " is: " + sum);
+        System.out.println("The average of numbers in the interval is: " + average);
+        System.out.println();
+    }
+
+    public double averageOfNumbersDivisibleBy7(int startNumber, int endNumber) {
+        int sum = 0;
+        int count = 0;
+        int currentNumber = startNumber;
+
+        while (currentNumber <= endNumber) {
+            if (currentNumber % 7 == 0) {
+                sum += currentNumber;
+                count++;
+            }
+            currentNumber++;
+        }
+
+        if (count == 0) {
+            return 0; // To avoid division by zero if there are no numbers divisible by 7
+        }
+
+        return (double) sum / count;
+    }
+
+    public void printFirst20FibonacciNumbers() {
+        int n = 20;
+        int firstNumber = 0;
+        int secondNumber = 1;
+        int count = 2;
+
+        System.out.print("First 20 numbers from the Fibonacci sequence: ");
+        System.out.print(firstNumber + " " + secondNumber + " ");
+
+        while (count < n) {
+            int nextNumber = firstNumber + secondNumber;
+            System.out.print(nextNumber + " ");
+
+            firstNumber = secondNumber;
+            secondNumber = nextNumber;
+
+            count++;
+        }
+        System.out.println();
+    }
+
+    public void cozaLozaWoza() {
+        int startNumber = 1;
+        int endNumber = 110;
+        int numbersPerLine = 11;
+
+        int currentNumber = startNumber;
+        while (currentNumber <= endNumber) {
+            // Check for multiples of 3, 5, and 7
+            boolean isCoza = currentNumber % 3 == 0;
+            boolean isLoza = currentNumber % 5 == 0;
+            boolean isWoza = currentNumber % 7 == 0;
+
+            if (isCoza && isLoza && isWoza) {
+                System.out.print("CozaLozaWoza");
+            } else if (isCoza && isLoza) {
+                System.out.print("CozaLoza");
+            } else if (isCoza && isWoza) {
+                System.out.print("CozaWoza");
+            } else if (isWoza && isLoza) {
+                System.out.print("WozaLoza");
+            } else if (isCoza) {
+                System.out.print("Coza");
+            } else if (isLoza) {
+                System.out.print("Loza");
+            } else if (isWoza) {
+                System.out.print("Woza");
+            } else {
+                System.out.print(currentNumber);
+            }
+
+            System.out.print(" ");
+
+            // Print a new line after printing 'numbersPerLine' numbers on a line
+            if (currentNumber % numbersPerLine == 0) {
+                System.out.println();
+            }
+
+            currentNumber++;
+        }
+        System.out.println();
+    }
 }

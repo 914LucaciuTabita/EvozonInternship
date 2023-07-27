@@ -12,6 +12,29 @@ public class Main {
         // ANSI escape code to reset text color to default
         String resetColorCode = "\u001B[0m";
 
+        System.out.println(pinkColorCode + "Assignment While loops" + resetColorCode);
+
+        //Ex7
+        logicalOp.sumAndAverageNumbersInInterval();
+
+        //Ex8
+        int startNumber8 = 100;
+        int endNumber8 = 200;
+        double averageDivisibleBy7 = logicalOp.averageOfNumbersDivisibleBy7(startNumber8, endNumber8);
+        System.out.println("The average of numbers divisible by 7 from " + startNumber8 + " to " + endNumber8 + " is: " + averageDivisibleBy7);
+
+        System.out.println();
+
+        //Ex9
+        logicalOp.printFirst20FibonacciNumbers();
+        System.out.println();
+
+        //Ex10
+        logicalOp.cozaLozaWoza();
+
+
+
+
         System.out.println(pinkColorCode + "Assignment For loops" + resetColorCode);
 
         //Ex1
@@ -62,9 +85,6 @@ public class Main {
 
         //Ex9
         logicalOp.printPattern();
-
-
-
 
         System.out.println(pinkColorCode + "Assignment3" + resetColorCode);
 
