@@ -12,6 +12,128 @@ public class Main {
         // ANSI escape code to reset text color to default
         String resetColorCode = "\u001B[0m";
 
+        System.out.println(pinkColorCode + "Assignment Arrays loops" + resetColorCode);
+
+        int result1 = calculator.add(10, 20);
+        float result2 = calculator.add(5.5f, 3.3f);
+        float result3 = calculator.add(1.2f, 2.3f, 3.4f);
+        int result4 = calculator.add(1, 2, 3, 4);
+        double result5 = calculator.add(2.5, 3.7);
+
+        System.out.println("Addition");
+        System.out.println("10 + 20 = " + result1);
+        System.out.println("5.5 + 3.3 = " + result2);
+        System.out.println("1.2 + 2.3 + 3.4 = " + result3);
+        System.out.println("1 + 2 + 3 + 4 = " + result4);
+        System.out.println("2.5 + 3.7 = " + result5);
+        System.out.println();
+
+        // Test subtraction methods with different parameter types
+        int res1 = calculator.subtraction(10, 5);
+        float res2 = calculator.subtraction(5.5f, 2.2f);
+        double res3 = calculator.subtraction(7.8, 3.6);
+
+        // Test subtraction methods with different number of parameters
+        int res4 = calculator.subtraction(20, 5, 3);
+        float res5 = calculator.subtraction(10.5f, 2.5f, 11.5f);
+        double res6 = calculator.subtraction(15.7, 4.2, 2.1);
+
+        System.out.println("Subtraction");
+        System.out.println("10 - 5 = " + res1);
+        System.out.println("5.5 - 2.2 = " + res2);
+        System.out.println("7.8 - 3.6 = " + res3);
+        System.out.println("20 - 5 - 3 = " + res4);
+        System.out.println("10.5 - 2.5 - 11.5 = " + res5);
+        System.out.println("15.7 - 4.2 - 2.1 = " + res6);
+        System.out.println();
+
+        System.out.println("Multiplication");
+        // Test multiply methods with two parameters
+        double m1 = calculator.multiply(2.5, 3.0);
+        int m2 = calculator.multiply(5, 4);
+        float m3 = calculator.multiply(1.5f, 2.0f);
+
+        // Test multiply methods with three parameters
+        double m4 = calculator.multiply(2.5, 3.0, 1.5);
+        int m5 = calculator.multiply(5, 4, 2);
+        float m6 = calculator.multiply(1.5f, 2.0f, 0.5f);
+
+        System.out.println("Result1: " + m1);
+        System.out.println("Result2: " + m2);
+        System.out.println("Result3: " + m3);
+        System.out.println("Result4: " + m4);
+        System.out.println("Result5: " + m5);
+        System.out.println("Result6: " + m6);
+        System.out.println();
+
+        System.out.println("Division");
+        // Test divide methods with two parameters
+        double d7 = calculator.divide(10.0, 2.0);
+        int d8 = calculator.divide(20, 4);
+        float d9 = calculator.divide(8.0f, 2.0f);
+
+        // Test divide methods with three parameters
+        double d10 = calculator.divide(15.0, 2.0, 3.0);
+        int d11 = calculator.divide(100, 5, 2);
+        float d12 = calculator.divide(6.0f, 2.0f, 1.5f);
+
+        System.out.println("Result7: " + d7);
+        System.out.println("Result8: " + d8);
+        System.out.println("Result9: " + d9);
+        System.out.println("Result10: " + d10);
+        System.out.println("Result11: " + d11);
+        System.out.println("Result12: " + d12);
+        System.out.println();
+
+        //Ex2
+        logicalOp.writeTo100Array();
+
+        //Ex3
+        int[] myArray = new int[50]; // Create an empty integer array of size 50
+
+        myArray = logicalOp.populateEvenNumbersArray(myArray);
+
+        // Print the populated array
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.print(myArray[i] + " ");
+        }
+        System.out.println("\n");
+
+        //Ex4
+        int[] myArray2 = {10, 20, 30, 40, 50}; // Create an array with some numbers
+        double averageArray = logicalOp.calculateAverage(myArray2);
+        System.out.println("The average of the numbers is: " + averageArray);
+        System.out.println();
+
+        //Ex5
+        String[] myArray3 = {"apple", "banana", "orange", "grape", "kiwi"};
+        String searchString = "orange";
+
+        boolean found = logicalOp.checkStringInArray(myArray3, searchString);
+        System.out.println("Is the string '" + searchString + "' present in the array? \n" + found);
+        System.out.println();
+
+        //Ex6
+        int[] myArray4 = {10, 20, 30, 40, 50};
+        int numberToFind = 30;
+
+        int position = logicalOp.findNumberInArray(myArray4, numberToFind);
+        if (position != -1) {
+            System.out.println("Number " + numberToFind + " found at position " + position);
+        } else {
+            System.out.println("Number " + numberToFind + " not found in the array.");
+        }
+        System.out.println();
+
+        //Ex7
+        int rows = 10;
+        int columns = 10;
+
+        logicalOp.printGrid(rows, columns);
+        System.out.println();
+
+
+
         System.out.println(pinkColorCode + "Assignment While loops" + resetColorCode);
 
         //Ex7
@@ -96,16 +218,16 @@ public class Main {
 
         //Ex4
         String input1 = "Evozon";
-        String result1 = logicalOp.compareToEvozon(input1);
-        System.out.printf("Evozon VS %s -> %s\n", input1, result1);
+        String r1 = logicalOp.compareToEvozon(input1);
+        System.out.printf("Evozon VS %s -> %s\n", input1, r1);
 
         String input2 = "EvOzOn"; // Different case
-        String result2 = logicalOp.compareToEvozon(input2);
-        System.out.printf("Evozon VS %s -> %s\n", input2, result2);
+        String r2 = logicalOp.compareToEvozon(input2);
+        System.out.printf("Evozon VS %s -> %s\n", input2, r2);
 
         String input3 = "OtherText";
-        String result3 = logicalOp.compareToEvozon(input3);
-        System.out.printf("Evozon VS %s -> %s\n\n", input3, result3);
+        String r3 = logicalOp.compareToEvozon(input3);
+        System.out.printf("Evozon VS %s -> %s\n\n", input3, r3);
 
         //Ex5
         String input5_1 = "Evozon";
@@ -206,7 +328,7 @@ public class Main {
         //Ex2
         double x = 10;
         double y = 3;
-        System.out.printf("%.5f + %.5f = %.5f\n", x, y, calculator.sum(x,y));
+        System.out.printf("%.5f + %.5f = %.5f\n", x, y, calculator.add(x,y));
         System.out.printf("%.5f - %.5f = %.5f\n", x, y, calculator.subtraction(x,y));
         System.out.printf("%.5f * %.5f = %.5f\n", x, y, calculator.multiply(x,y));
         System.out.printf("%.5f / %.5f = %.5f\n", x, y, calculator.divide(x,y));

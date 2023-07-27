@@ -319,4 +319,67 @@ public class LogicalOp {
         }
         System.out.println();
     }
+
+    public void writeTo100Array() {
+        int[] array = new int[100];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
+            System.out.println("Writing value " + array[i] + " at index " + i);
+        }
+        System.out.println();
+    }
+
+    public int[] populateEvenNumbersArray(int[] emptyArray) {
+        int index = 0;
+
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                emptyArray[index] = i;
+                index++;
+            }
+        }
+
+        return emptyArray;
+    }
+
+    public double calculateAverage(int[] numbers) {
+        int sum = 0;
+
+        for (int number : numbers) {
+            sum += number;
+        }
+
+        return (double) sum / numbers.length;
+    }
+
+    public boolean checkStringInArray(String[] array, String value) {
+        for (String str : array) {
+            if (str.equals(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int findNumberInArray(int[] array, int number) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                return i; // Return the index where the number is found
+            }
+        }
+        return -1; // Return -1 if the number is not found in the array
+    }
+
+    public void printGrid(int rows, int columns) {
+        char[][] grid = new char[rows][columns];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                grid[i][j] = '-';
+                System.out.print(grid[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
