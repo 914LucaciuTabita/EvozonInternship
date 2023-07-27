@@ -102,4 +102,118 @@ public class LogicalOp {
 
         return max;
     }
+
+    public void printCountdownTo100(int number) {
+        if (number <= 100){
+            System.out.printf("Numbers between %d and %d: ", number, 100);
+            for (int i = number; i <= 100; i++) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\n");
+        } else {
+            System.out.printf("Numbers between %d and %d: ", 100, number);
+            for (int i = number; i >= 100; i--) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\n");
+        }
+    }
+
+    public void printCountdownToNegative100(int number) {
+        if (number <= -100){
+            System.out.printf("Numbers between %d and %d: ", number, -100);
+            for (int i = number; i <= -100; i++) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\n");
+        } else {
+            System.out.printf("Numbers between %d and %d: ", -100, number);
+            for (int i = number; i >= -100; i--) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\n");
+        }
+    }
+
+    public void printCountdownBetweenNumbers(int x, int y) {
+        if (x <= y) {
+            System.out.printf("Numbers between %d and %d: ", x, y);
+            for (int i = x; i <= y; i++) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\n");
+        } else {
+            System.out.printf("Numbers between %d and %d: ", x, y);
+            for (int i = x; i >= y; i--) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\n");
+        }
+    }
+
+    public void countUpBetweenNumbers(int x, int y) {
+        if (x < y) {
+            System.out.printf("Numbers between %d and %d: ", x, y);
+            for (int i = x; i <= y; i++) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\n");
+        } else {
+            System.out.printf("Numbers between %d and %d: ", y, x);
+            for (int i = y; i <= x; i++) {
+                System.out.print(i + " ");
+            }
+            System.out.println("\n");
+        }
+    }
+
+    public void printEvenNumbers() {
+        System.out.printf("Even numbers from 1 to 100: ");
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\n");
+    }
+
+    public void printOddNumbers() {
+        System.out.printf("Odd numbers from 1 to 100: ");
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 == 1) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\n");
+    }
+
+    public int sumNumbersUpTo100(int number){
+        int sum = 0;
+        for (int i = number; i <= 100; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    public double calculateAverageUpTo100(int number) {
+        int sum = 0;
+        int count = 0;
+
+        for (int i = number; i <= 100; i++) {
+            sum += i;
+            count++;
+        }
+
+        double average = (double) sum / count;
+        return average;
+    }
+
+    public void printPattern() {
+        for (int i = 7; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
 }

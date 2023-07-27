@@ -12,13 +12,66 @@ public class Main {
         // ANSI escape code to reset text color to default
         String resetColorCode = "\u001B[0m";
 
-        int big1 = 2;
-        int big2 = 3;
-        int biggest = logicalOp.checkBiggerNumber(big1, big2);
+        System.out.println(pinkColorCode + "Assignment For loops" + resetColorCode);
+
+        //Ex1
+        int startNumber = 85;
+        logicalOp.printCountdownTo100(startNumber);
+
+        int startNumber2 = 112;
+        logicalOp.printCountdownTo100(startNumber2);
+
+        //Ex2
+        int startNumber3 = 0;
+        logicalOp.printCountdownToNegative100(startNumber3);
+
+        int startNumber4 = -170;
+        logicalOp.printCountdownToNegative100(startNumber4);
+
+        //Ex3
+        int a1 = 10, a2 = 5;
+        logicalOp.printCountdownBetweenNumbers(a1, a2);
+
+        a1 = 20; a2 = 47;
+        logicalOp.printCountdownBetweenNumbers(a1, a2);
+
+        //Ex4
+        a1 = 5; a2 = 10;
+        logicalOp.countUpBetweenNumbers(a1, a2);
+
+        a1 = 23; a2 = 10;
+        logicalOp.countUpBetweenNumbers(a1, a2);
+
+        //Ex5
+        logicalOp.printEvenNumbers();
+
+        //Ex6
+        logicalOp.printOddNumbers();
+
+        //Ex7
+        int b = 50;
+        int result_b = logicalOp.sumNumbersUpTo100(b);
+        System.out.println("The sum from " + b + " to 100 is: " + result_b);
+        System.out.println();
+
+        //Ex8
+        int c = 50;
+        double average = logicalOp.calculateAverageUpTo100(c);
+        System.out.println("The average from " + startNumber + " to 100 is: " + average);
+        System.out.println();
+
+        //Ex9
+        logicalOp.printPattern();
+
+
+
 
         System.out.println(pinkColorCode + "Assignment3" + resetColorCode);
 
         //Ex3
+         int big1 = 2;
+         int big2 = 3;
+         int biggest = logicalOp.checkBiggerNumber(big1, big2);
         System.out.printf("The bigger number between %d and %d is: %d\n\n", big1, big2, biggest);
 
         //Ex4
