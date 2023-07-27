@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        LogicalOp logicalOp = new LogicalOp();
+
         // ANSI escape code for pink text
         String pinkColorCode = "\u001B[35m";
         // ANSI escape code for blue text
@@ -9,21 +12,131 @@ public class Main {
         // ANSI escape code to reset text color to default
         String resetColorCode = "\u001B[0m";
 
-        System.out.println(pinkColorCode + "Assignment2" + resetColorCode);
+        int big1 = 2;
+        int big2 = 3;
+        int biggest = logicalOp.checkBiggerNumber(big1, big2);
+
+        System.out.println(pinkColorCode + "Assignment3" + resetColorCode);
+
+        //Ex3
+        System.out.printf("The bigger number between %d and %d is: %d\n\n", big1, big2, biggest);
+
+        //Ex4
+        String input1 = "Evozon";
+        String result1 = logicalOp.compareToEvozon(input1);
+        System.out.printf("Evozon VS %s -> %s\n", input1, result1);
+
+        String input2 = "EvOzOn"; // Different case
+        String result2 = logicalOp.compareToEvozon(input2);
+        System.out.printf("Evozon VS %s -> %s\n", input2, result2);
+
+        String input3 = "OtherText";
+        String result3 = logicalOp.compareToEvozon(input3);
+        System.out.printf("Evozon VS %s -> %s\n\n", input3, result3);
+
+        //Ex5
+        String input5_1 = "Evozon";
+        int num5_1 = 3;
+        String result5_1 = logicalOp.compareStringAndNumber(input5_1, num5_1);
+        System.out.println("Result 1: " + result5_1);
+
+        String input5_2 = "Evozon";
+        int num5_2 = 5;
+        String result5_2 = logicalOp.compareStringAndNumber(input5_2, num5_2);
+        System.out.println("Result 2: " + result5_2);
+
+        String input5_3 = "OtherText";
+        int num5_3 = 2;
+        String result5_3 = logicalOp.compareStringAndNumber(input5_3, num5_3);
+        System.out.println("Result 3: " + result5_3);
+        System.out.println();
+
+        //Ex6
+        int amount1 = 10;
+        String result6_1 = logicalOp.snowForecast(amount1);
+        System.out.println(result6_1);
+
+        int amount2 = 6;
+        String result6_2 = logicalOp.snowForecast(amount2);
+        System.out.println(result6_2);
+
+        int amount3 = 4;
+        String result6_3 = logicalOp.snowForecast(amount3);
+        System.out.println(result6_3);
+        System.out.println();
+
+        //Ex7
+        int num7_1 = 5;
+        String result7_1 = logicalOp.checkNumber(num7_1);
+        System.out.println(num7_1 + ": " + result7_1);
+
+        int num7_2 = 4;
+        String result7_2 = logicalOp.checkNumber(num7_2);
+        System.out.println(num7_2 + ": " + result7_2);
+
+        int num7_3 = 2;
+        String result7_3 = logicalOp.checkNumber(num7_3);
+        System.out.println(num7_3 + ": " + result7_3);
+        System.out.println();
+
+        //Ex8
+        int num8_1 = 1;
+        logicalOp.displayNumber(num8_1);
+
+        int num8_2 = 5;
+        logicalOp.displayNumber(num8_2);
+
+        int num8_3 = 12;
+        logicalOp.displayNumber(num8_3);
+        System.out.println();
+
+        //Ex9
+        int num9_1 = 10;
+        int num9_2 = 15;
+
+        boolean isEven1 = logicalOp.isNumberEven(num9_1);
+        System.out.println(num9_1 + " is even: " + isEven1);
+
+        boolean isEven2 = logicalOp.isNumberEven(num9_2);
+        System.out.println(num9_2 + " is even: " + isEven2);
+        System.out.println();
+
+        //Ex10
+        int age1 = 25;
+        int age2 = 17;
+
+        boolean isEligible1 = logicalOp.isEligibleToVote(age1);
+        System.out.println("Age " + age1 + " is eligible to vote: " + isEligible1);
+
+        boolean isEligible2 = logicalOp.isEligibleToVote(age2);
+        System.out.println("Age " + age2 + " is eligible to vote: " + isEligible2);
+        System.out.println();
+
+        //Ex11
+        int num10_1 = 15;
+        int num10_2 = 8;
+        int num10_3 = 20;
+
+        int maxNumber = logicalOp.findMaxNumber(num10_1, num10_2, num10_3);
+        System.out.println("The maximum number is: " + maxNumber);
+
+
+        //Assignment2
+        System.out.println(pinkColorCode + "\nAssignment2" + resetColorCode);
 
         //Ex1
-        printMyName();
-        printSum();
-        printDivision();
-        printOperations();
+//        printMyName();
+//        printSum();
+//        printDivision();
+//        printOperations();
 
         //Ex2
         double x = 10;
         double y = 3;
-        System.out.printf("%.5f + %.5f = %.5f\n", x, y, sum(x,y));
-        System.out.printf("%.5f - %.5f = %.5f\n", x, y, subtraction(x,y));
-        System.out.printf("%.5f * %.5f = %.5f\n", x, y, multiplication(x,y));
-        System.out.printf("%.5f / %.5f = %.5f\n", x, y, division(x,y));
+        System.out.printf("%.5f + %.5f = %.5f\n", x, y, calculator.sum(x,y));
+        System.out.printf("%.5f - %.5f = %.5f\n", x, y, calculator.subtraction(x,y));
+        System.out.printf("%.5f * %.5f = %.5f\n", x, y, calculator.multiply(x,y));
+        System.out.printf("%.5f / %.5f = %.5f\n", x, y, calculator.divide(x,y));
         System.out.println(blueColorCode);
 
         //Ex3
@@ -126,27 +239,6 @@ public class Main {
         int resultD = 5 + 15 / 3 * 2 - 8 % 3;
         System.out.println("\n5 + 15 / 3 * 2 - 8 % 3 = " + resultD);
 
-    }
-
-    //Ex2
-    public static double sum(double first, double second){
-        double result = first + second;
-        return result;
-    }
-
-    public static double subtraction(double first, double second){
-        double result = first - second;
-        return result;
-    }
-
-    public static double multiplication(double first, double second){
-        double result = first * second;
-        return result;
-    }
-
-    public static double division(double first, double second){
-        double result = first/second;
-        return result;
     }
 
     //Ex3
