@@ -1,6 +1,8 @@
-package Model;
+package Model.Veterinarians;
 
-public class Veterinarian {
+import Model.Animals.Animal;
+
+public abstract class Veterinarian {
     private String name;
     private String specialization;
 
@@ -24,4 +26,12 @@ public class Veterinarian {
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
+
+    public void introduce() {
+        System.out.println("Hello, I'm Dr. " + getName() + ", a " + getSpecialization() + " veterinarian.");
+    }
+
+    public abstract void checkHealth(Animal animal);
+
+    public abstract void treat(Animal animal);
 }

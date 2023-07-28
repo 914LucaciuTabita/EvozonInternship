@@ -1,4 +1,4 @@
-package Model;
+package Model.AnimalFood;
 
 import java.time.LocalDate;
 
@@ -55,5 +55,34 @@ public class AnimalFood {
 
     public void setAvailableInStock(boolean availableInStock) {
         this.availableInStock = availableInStock;
+    }
+
+    public void checkExpiryStatus() {
+        LocalDate currentDate = LocalDate.now();
+        if (expirationDate.isBefore(currentDate)) {
+            availableInStock = false;
+            System.out.println(name + " has expired and is no longer available in stock(" + expirationDate + ").");
+        }  else if (expirationDate.isEqual(currentDate)) {
+            System.out.println(name + " expires today(" + expirationDate + ").");
+        } else {
+            System.out.println(name + " is still within the expiry date(" + expirationDate + ").");
+        }
+    }
+
+    public void restockFood(double quantity) {
+        this.quantity += quantity;
+        availableInStock = true;
+        System.out.println(name + " has been restocked. New quantity: " + this.quantity);
+    }
+
+    public boolean useFood(double quantityToUse) {
+        if (quantity >= quantityToUse) {
+            setQuantity(quantity - quantityToUse);
+            System.out.println("Used " + quantityToUse + " kg of " + getName() + ". Remaining quantity: " + quantity + " kg.\n");
+            return true;
+        } else {
+            System.out.println("Not enough " + getName() + " in stock. Available quantity: " + quantity + " kg.\n");
+            return false;
+        }
     }
 }

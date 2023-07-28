@@ -1,6 +1,6 @@
-package Model;
+package Model.Animals;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private int age;
     private int healthLvl;
@@ -8,6 +8,8 @@ public class Animal {
     private int moodLvl;
     private String favFood;
     private String favActivity;
+    private int heartRate = 60;
+    private int temperature = 36;
 
     public Animal(String name, int age, int healthLvl, int hungerLvl, int moodLvl, String favFood, String favActivity) {
         this.name = name;
@@ -17,6 +19,18 @@ public class Animal {
         this.moodLvl = moodLvl;
         this.favFood = favFood;
         this.favActivity = favActivity;
+    }
+
+    public Animal(String name, int age, int healthLvl, int hungerLvl, int moodLvl, String favFood, String favActivity, int heartRate, int temperature) {
+        this.name = name;
+        this.age = age;
+        this.healthLvl = healthLvl;
+        this.hungerLvl = hungerLvl;
+        this.moodLvl = moodLvl;
+        this.favFood = favFood;
+        this.favActivity = favActivity;
+        this.heartRate = heartRate;
+        this.temperature = temperature;
     }
 
     public String getName() {
@@ -75,17 +89,26 @@ public class Animal {
         this.favActivity = favActivity;
     }
 
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", healthLvl=" + healthLvl +
-                ", hungerLvl=" + hungerLvl +
-                ", moodLvl=" + moodLvl +
-                ", favFood='" + favFood + '\'' +
-                ", favActivity='" + favActivity + '\'' +
-                '}';
+    public int getHeartRate() {
+        return heartRate;
     }
+
+    public void setHeartRate(int heartRate) {
+        this.heartRate = heartRate;
+    }
+
+    public int getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+
+    public abstract void sleep();
+
+    public abstract void wakeup();
+
+    public abstract void play();
 }
 
