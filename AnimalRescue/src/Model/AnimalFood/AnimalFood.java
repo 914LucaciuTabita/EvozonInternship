@@ -9,6 +9,13 @@ public class AnimalFood {
     private LocalDate expirationDate;
     private boolean availableInStock;
 
+    // ANSI escape code for pink text
+    String pinkColorCode = "\u001B[35m";
+    // ANSI escape code for blue text
+    String blueColorCode = "\u001B[34m";
+    // ANSI escape code to reset text color to default
+    String resetColorCode = "\u001B[0m";
+
     public AnimalFood(String name, double price, double quantity, LocalDate expirationDate, boolean availableInStock) {
         this.name = name;
         this.price = price;

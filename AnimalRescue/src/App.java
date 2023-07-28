@@ -12,6 +12,13 @@ import java.time.LocalDate;
 
 public class App {
     public static void main(String[] args) {
+        // ANSI escape code for pink text
+        String pinkColorCode = "\u001B[35m";
+        // ANSI escape code for blue text
+        String blueColorCode = "\u001B[34m";
+        // ANSI escape code to reset text color to default
+        String resetColorCode = "\u001B[0m";
+
         // Create an animal shelter
         AnimalShelter animalShelter = new AnimalShelter();
 
@@ -25,7 +32,7 @@ public class App {
 
         // Girl and her father visit the animal shelter to adopt a pet
 //        father.adoptAnimal(dog, "Max");
-        System.out.println("One day, a little " + girl.getAge() + "-year-old girl with " + girl.getHairColor() +
+        System.out.println("\nOne day, a little " + girl.getAge() + "-year-old girl with " + girl.getHairColor() +
                 " and a love for animals entered an animal shelter together with her tall father to adopt a pet.\n" +
                 "The girl fell in love with a dog, which was a Labrador mix. \nThe dog was very unhappy, thin, and " +
                 "refused to eat. ");
@@ -37,12 +44,13 @@ public class App {
         AnimalFood poodleFood = new AnimalFood("Poodle Food", 10, 10, LocalDate.of(2024, 1, 1), true);
         girl.feedAnimal(dog, poodleFood, 3);
 
-        System.out.println("\nAfter some time, the dog, who was a few years old, started gaining weight and became more energetic. ");
+        System.out.println("After some time, the dog, who was a few years old, started gaining weight and became more energetic. ");
 
 
         // Play with the pet
         RecreationActivity playActivity = new RecreationActivity("playing fetch");
         playActivity.performActivity(dog);
+        System.out.println();
 
         // Take the pet to the veterinarian for check-up
         Veterinarian veterinarian = new GeneralVeterinarian("Dr. Smith", "General");
@@ -86,9 +94,9 @@ public class App {
         dog.sleep();
 
         // Check the pet's current state
-        System.out.println("Current state of " + dog.getName() + ":");
-        System.out.println("Health Level: " + dog.getHealthLvl());
-        System.out.println("Hunger Level: " + dog.getHungerLvl());
-        System.out.println("Mood Level: " + dog.getMoodLvl());
+        System.out.println(pinkColorCode + "Current state of " + dog.getName() + ":");
+        System.out.println(blueColorCode + "Health Level: " + resetColorCode + dog.getHealthLvl());
+        System.out.println(blueColorCode + "Hunger Level: " + resetColorCode + dog.getHungerLvl());
+        System.out.println(blueColorCode + "Mood Level: " + resetColorCode + dog.getMoodLvl());
     }
 }

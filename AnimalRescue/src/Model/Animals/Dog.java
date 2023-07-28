@@ -16,7 +16,8 @@ public class Dog extends Animal {
             setMoodLvl(getMoodLvl() + 2);
         } else { setMoodLvl(10); }
 
-        System.out.println(getName() + " is sleeping.\n" + "Mood level: " + oldMoodLvl + " -> " + getMoodLvl() + "\n");
+        System.out.println(getName() + " is sleeping.\n" + blueColorCode + "Mood level: " + resetColorCode + "increased from " +
+                oldMoodLvl + " to " + getMoodLvl() + "\n");
     }
 
     @Override
@@ -27,11 +28,13 @@ public class Dog extends Animal {
             setMoodLvl(getMoodLvl() + 4);
         } else { setMoodLvl(10); }
 
-        if (getHungerLvl() > 3) {
-            setHungerLvl(getHungerLvl() - 3);
-        } else { setHungerLvl(1); }
+        if (getHungerLvl() <= 7) {
+            setHungerLvl(getHungerLvl() + 3);
+        } else { setHungerLvl(10); }
 
-        System.out.println(getName() + " is playing " + getFavActivity() + ".\n" + "Mood level: " + oldMoodLvl + " -> " + getMoodLvl() + "\nHunger level: " + oldHungerLvl + " -> " + getHungerLvl() + "\n");
+        System.out.println(getName() + " is playing " + getFavActivity() + ".\n" + blueColorCode + "Mood level: " +
+                resetColorCode + "increased from " + oldMoodLvl + " to " + getMoodLvl() + blueColorCode + "\nHunger level: " +
+                resetColorCode + "increased from " + oldHungerLvl + " to " + getHungerLvl() + "\n");
     }
 
     public void walk() {
@@ -40,7 +43,8 @@ public class Dog extends Animal {
             setMoodLvl(getMoodLvl() + 2);
         } else { setMoodLvl(10); }
 
-        System.out.println(getName() + " is happy going for a walk.\n" + "Mood level: " + oldMoodLvl + " -> " + getMoodLvl() + "\n");
+        System.out.println(getName() + " is happy going for a walk.\n" + blueColorCode + "Mood level: " +
+                resetColorCode + "increased from " + oldMoodLvl + " to " + getMoodLvl() + "\n");
     }
 
     @Override

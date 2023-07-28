@@ -13,6 +13,13 @@ public class Adopter {
     private double availableMoney;
     private AnimalShelter animalShelter;
 
+    // ANSI escape code for pink text
+    String pinkColorCode = "\u001B[35m";
+    // ANSI escape code for blue text
+    String blueColorCode = "\u001B[34m";
+    // ANSI escape code to reset text color to default
+    String resetColorCode = "\u001B[0m";
+
     public Adopter(String name, int age, double availableMoney, AnimalShelter animalShelter) {
         this.name = name;
         this.age = age;
@@ -67,15 +74,15 @@ public class Adopter {
                 } else {
                     animal.setHungerLvl(1);
                 }
-                System.out.println(name + " fed " + animal.getName() + " with " + food.getName() + ".\nHunger level: " + oldHungerLvl + " -> " + animal.getHungerLvl());
+                System.out.println(name + " fed " + animal.getName() + " with " + food.getName() + blueColorCode + ".\nHunger level: " + resetColorCode + "decreased from " + oldHungerLvl + " to " + animal.getHungerLvl());
             } else {
-                System.out.println(name + " tried to feed " + animal.getName() + " with " + food.getName() + ", but it's not its favorite food.");
+                System.out.println(name + " tried to feed " + animal.getName() + " with " + food.getName() + ", but it's not its " + pinkColorCode + "favorite food" + resetColorCode + ".");
             }
             if (food instanceof LowCalorieFood) {
                 LowCalorieFood lowCalorieFood = (LowCalorieFood) food;
                 animal.setHealthLvl(animal.getHealthLvl() + 1);
                 System.out.println("This is a low-calorie food with calorie content: " +
-                        lowCalorieFood.getCalorieContent() + " kcal which will increase " + animal.getName() + "'s health. Health level: " + oldHealthLvl + " -> " + animal.getHealthLvl());
+                        lowCalorieFood.getCalorieContent() + " kcal which will increase " + animal.getName() + "'s health.\n" + blueColorCode + "Health level: " + resetColorCode + "increased from " + oldHealthLvl + " to " + animal.getHealthLvl());
             }
         }
         food.useFood(quantity);
@@ -87,6 +94,6 @@ public class Adopter {
     }
 
     public void takeAnimalToVeterinarian(Animal animal, Veterinarian veterinarian) {
-        System.out.println(name + " takes " + animal.getName() + " to veterinarian.");
+        System.out.println(name + " takes " + animal.getName() + " to veterinarian " + veterinarian.getName() + ".");
     }
 }

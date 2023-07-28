@@ -19,9 +19,9 @@ public class GeneralVeterinarian extends Veterinarian {
         }
 
         System.out.println(getName() + " is doing a general health check-up for " + animal.getName() + ":");
-        System.out.println("Health Level: " + animal.getHealthLvl());
-        System.out.println("Heart rate: " + animal.getHeartRate());
-        System.out.println("Temperature: " + animal.getTemperature());
+        System.out.println(blueColorCode + "Health Level: " + resetColorCode + animal.getHealthLvl());
+        System.out.println(blueColorCode +  "Heart rate: " + resetColorCode + animal.getHeartRate());
+        System.out.println(blueColorCode + "Temperature: " + resetColorCode + animal.getTemperature());
         System.out.println();
     }
 
@@ -33,7 +33,7 @@ public class GeneralVeterinarian extends Veterinarian {
         }
         if (animal.getHealthLvl() < 5){
             animal.setHealthLvl(animal.getHealthLvl() + 2);
-            System.out.println(getName() + " is treating " + animal.getName() + ". Health level: " + oldHealthLvl + " -> " + animal.getHealthLvl() + "\n");
+            System.out.println(getName() + " is treating " + animal.getName() + ". Health level: " + "increased from " + oldHealthLvl + " to " + animal.getHealthLvl() + "\n");
         }
     }
 }

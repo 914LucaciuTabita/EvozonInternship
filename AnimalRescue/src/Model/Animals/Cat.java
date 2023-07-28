@@ -16,7 +16,7 @@ public class Cat extends Animal {
             setMoodLvl(getMoodLvl() + 1);
         } else { setMoodLvl(10); }
 
-        System.out.println(getName() + " is sleeping peacefully.\n" + "Mood level: " + oldMoodLvl + " -> " + getMoodLvl() + "\n");
+        System.out.println(getName() + " is sleeping peacefully.\n" + "Mood level: " + "increased from " + oldMoodLvl + " to " + getMoodLvl() + "\n");
     }
 
     @Override
@@ -27,11 +27,11 @@ public class Cat extends Animal {
             setMoodLvl(getMoodLvl() + 1);
         } else { setMoodLvl(10); }
 
-        if (getHungerLvl() > 2) {
-            setHungerLvl(getHungerLvl() - 2);
-        } else { setHungerLvl(1); }
+        if (getHungerLvl() <= 8) {
+            setHungerLvl(getHungerLvl() + 2);
+        } else { setHungerLvl(10); }
 
-        System.out.println(getName() + " is playing " + getFavActivity() + ".\n" + "Mood level: " + oldMoodLvl + " -> " + getMoodLvl() + "\nHunger level: " + oldHungerLvl + " -> " + getHungerLvl() + "\n");
+        System.out.println(getName() + " is playing " + getFavActivity() + ".\n" + "Mood level: " + "increased from " + oldMoodLvl + " to " + getMoodLvl() + "\nHunger level: " + " increased from " + oldHungerLvl + " to " + getHungerLvl() + "\n");
     }
 
     @Override

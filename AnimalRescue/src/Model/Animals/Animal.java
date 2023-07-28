@@ -11,6 +11,13 @@ public abstract class Animal {
     private int heartRate = 60;
     private int temperature = 36;
 
+    // ANSI escape code for pink text
+    String pinkColorCode = "\u001B[35m";
+    // ANSI escape code for blue text
+    String blueColorCode = "\u001B[34m";
+    // ANSI escape code to reset text color to default
+    String resetColorCode = "\u001B[0m";
+
     public Animal(String name, int age, int healthLvl, int hungerLvl, int moodLvl, String favFood, String favActivity) {
         this.name = name;
         this.age = age;

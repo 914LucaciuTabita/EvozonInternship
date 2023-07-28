@@ -5,6 +5,13 @@ import Model.Animals.Animal;
 public class RecreationActivity {
     private String name;
 
+    // ANSI escape code for pink text
+    String pinkColorCode = "\u001B[35m";
+    // ANSI escape code for blue text
+    String blueColorCode = "\u001B[34m";
+    // ANSI escape code to reset text color to default
+    String resetColorCode = "\u001B[0m";
+
     public RecreationActivity(String name) {
         this.name = name;
     }
@@ -31,6 +38,7 @@ public class RecreationActivity {
         } else {
             animal.setMoodLvl(10);
         }
-        System.out.println("Mood level: " + oldMoodLvl + " -> " + animal.getMoodLvl() + "\nHunger level: " + oldHungerLvl + " -> " + animal.getHungerLvl());
+        System.out.println(blueColorCode + "Mood level: " + resetColorCode + "increased from " + oldMoodLvl + " to " +
+                animal.getMoodLvl() + blueColorCode + "\nHunger level: " + resetColorCode + "increased from " + oldHungerLvl + " to " + animal.getHungerLvl());
     }
 }
