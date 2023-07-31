@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -130,6 +131,25 @@ public class Main {
         int columns = 10;
 
         logicalOp.printGrid(rows, columns);
+        System.out.println();
+
+        //Ex8
+        int numberToRemove = 40;
+        int[] resultArray = logicalOp.removeNumberFromArray(myArray4, numberToRemove);
+        logicalOp.printIntArray(myArray4);
+        System.out.println("Array after removing " + numberToRemove + ": " + Arrays.toString(resultArray));
+
+        //Ex9
+        System.out.println("Second smallest number in the array: " + logicalOp.findSecondSmallest(myArray4));
+        System.out.println();
+
+        //Ex10
+        int[] sourceArray = {1, 2, 3, 4, 5};
+        int[] destinationArray = new int[sourceArray.length];
+
+        logicalOp.copyArray(sourceArray, destinationArray);
+        System.out.println("Source array: " + Arrays.toString(sourceArray));
+        System.out.println("Destination array (copied): " + Arrays.toString(destinationArray));
         System.out.println();
 
 

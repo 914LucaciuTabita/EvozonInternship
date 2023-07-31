@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class LogicalOp {
     public int checkBiggerNumber(int first, int second) {
         if (first > second) {
@@ -380,6 +382,60 @@ public class LogicalOp {
                 System.out.print(grid[i][j] + " ");
             }
             System.out.println();
+        }
+    }
+
+    public void printIntArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public int[] removeNumberFromArray(int[] array, int number) {
+        int pos = findNumberInArray(array, number);
+
+        if (pos == -1) {
+            return array;
+        } else {
+            int[] newArray = new int[array.length - 1];
+            int newIndex = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (i != pos) {
+                    newArray[newIndex] = array[i];
+                    newIndex++;
+                }
+            }
+            return newArray;
+        }
+    }
+
+    public int returnSmallest(int[] array) {
+        int min = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        return min;
+    }
+
+    public int findSecondSmallest(int[] array) {
+        if (array.length < 2) {
+            throw new IllegalArgumentException("Array should have at least two elements.");
+        }
+
+        Arrays.sort(array);
+        return array[1];
+    }
+
+    public void copyArray(int[] sourceArray, int[] destinationArray) {
+        if (sourceArray.length > destinationArray.length) {
+            throw new IllegalArgumentException("Destination array should have at least the same length as the source array.");
+        }
+
+        for (int i = 0; i < sourceArray.length; i++) {
+            destinationArray[i] = sourceArray[i];
         }
     }
 }
