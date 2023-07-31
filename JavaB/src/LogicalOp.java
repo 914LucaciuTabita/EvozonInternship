@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class LogicalOp {
     public int checkBiggerNumber(int first, int second) {
@@ -437,5 +440,66 @@ public class LogicalOp {
         for (int i = 0; i < sourceArray.length; i++) {
             destinationArray[i] = sourceArray[i];
         }
+    }
+
+    public void printListValues(List<Integer> list) {
+        for (Integer value : list) {
+            System.out.println(value);
+        }
+    }
+
+    public void addNumberToList(List<Integer> list, int number) {
+        list.add(number);
+    }
+
+    public void printListValuesFromIndex(List<Integer> list, int startingIndex) {
+        if (startingIndex < 0 || startingIndex >= list.size()) {
+            throw new IllegalArgumentException("Starting index is out of bounds.");
+        }
+
+        for (int i = startingIndex; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+    }
+
+    public void printListValuesInReverse(List<Integer> list) {
+        List<Integer> reversedList = new ArrayList<>(list); // Create a mutable copy of the list
+        Collections.reverse(reversedList); // Reverse the mutable list
+        for (Integer value : reversedList) {
+            System.out.println(value);
+        }
+    }
+
+    public void addStringToListAtPosition(List<String> list, int position, String value) {
+        if (position < 0 || position > list.size()) {
+            throw new IllegalArgumentException("Invalid position. Position should be between 0 and list size.");
+        }
+
+        list.add(position, value);
+    }
+
+    public void addElementAtFirstPosition(List<Integer> list, int value) {
+        list.add(0, value);
+    }
+
+    public void printListValuesWithPositions(List<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println("At position " + (i + 1) + ", the value is " + list.get(i));
+        }
+    }
+
+    public int findMaxNumber(List<Integer> list) {
+        if (list == null || list.isEmpty()) {
+            throw new IllegalArgumentException("List is null or empty.");
+        }
+
+        int maxNumber = list.get(0);
+        for (int i = 1; i < list.size(); i++) {
+            int currentNumber = list.get(i);
+            if (currentNumber > maxNumber) {
+                maxNumber = currentNumber;
+            }
+        }
+        return maxNumber;
     }
 }

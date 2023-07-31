@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +14,80 @@ public class Main {
         String blueColorCode = "\u001B[34m";
         // ANSI escape code to reset text color to default
         String resetColorCode = "\u001B[0m";
+
+        System.out.println(pinkColorCode + "Assignment Lists loops" + resetColorCode);
+        System.out.println();
+
+        //Ex1
+        List<Integer> myList = List.of(1, 2, 3, 4, 5);
+        logicalOp.printListValues(myList);
+        System.out.println();
+
+        //Ex2
+        List<Integer> myList2 = new ArrayList<>();
+
+        myList2.add(1);
+        myList2.add(2);
+        myList2.add(3);
+        int numberToAdd = 4;
+
+        logicalOp.addNumberToList(myList2, numberToAdd);
+
+        System.out.println("List after adding the number " + numberToAdd + ": " + myList2);
+        System.out.println();
+
+        //Ex3
+        int startingIndex = 2;
+        System.out.println("List values starting from index " + startingIndex + ": ");
+        logicalOp.printListValuesFromIndex(myList, startingIndex);
+        System.out.println();
+
+        //Ex4
+        System.out.println("List values in reverse: ");
+        logicalOp.printListValuesInReverse(myList);
+        System.out.println();
+
+        //Ex5
+        List<String> myList5 = new ArrayList<>();
+
+        myList5.add("A");
+        myList5.add("B");
+        myList5.add("C");
+
+        String stringToAdd = "X";
+
+        int positionToAdd = 1;
+
+        logicalOp.addStringToListAtPosition(myList5, positionToAdd, stringToAdd);
+
+        System.out.println("List after adding the string \"" + stringToAdd + "\" at position " + positionToAdd + ": " + myList5);
+
+        //Ex6
+        List<Integer> myList6 = new ArrayList<>();
+
+        myList6.add(2);
+        myList6.add(3);
+        myList6.add(4);
+
+        int numberToAdd6 = 1;
+
+        logicalOp.addElementAtFirstPosition(myList6, numberToAdd6);
+        System.out.println("List after adding the number " + numberToAdd6 + " at the first position: " + myList6);
+        System.out.println();
+
+        //Ex7
+        List<Integer> myList7 = List.of(4, 2, 6, 1, 3);
+        logicalOp.printListValuesWithPositions(myList7);
+
+        System.out.println();
+
+        //Ex8
+        List<Integer> myList8 = List.of(4, 7, 2, 9, 5);
+        int maxNumber8 = logicalOp.findMaxNumber(myList8);
+        System.out.println("The largest number in the list is: " + maxNumber8);
+        System.out.println();
+
+
 
         System.out.println(pinkColorCode + "Assignment Arrays loops" + resetColorCode);
 
